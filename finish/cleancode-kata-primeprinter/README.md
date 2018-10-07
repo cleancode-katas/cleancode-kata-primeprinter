@@ -70,4 +70,14 @@ Activity
 - Extract the number printing logic to method
 - name the method printPrimes
 - add parameters to pass primes and numberOfPrimes
+
+Activity
+
+- rename parameter primes to numbers
+- rename param numberOfPrimes to numberOfNumbers
+- return primes from invoke method
+- take out the printPrimes call
+- shift the numberOfPrimes field to PrimePrinter, make static
+- pull variable for PrimePrinterHelper
+- call method printNumbers by passing primes and numberOfPrimes 
                
