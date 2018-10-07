@@ -1,10 +1,9 @@
 package com.cleancode.knuth;
 
-public class PrimePrinterHelper {
+public class PrimeGenerator {
 
-    private final int numberOfPrimes = 1000;
     private final int ordmax = 30;
-    private final int[] primes = new int[numberOfPrimes +1];
+    private int[] primes;
     private int candidate;
     private int primeIndex;
     private boolean possiblyPrime;
@@ -13,9 +12,9 @@ public class PrimePrinterHelper {
     private int n;
     private final int[] mult = new int[ordmax +1];
 
-    public int[] generatePrimes() {
+    public int[] generatePrimes(int numberOfPrimes) {
         n = 0;
-
+        primes = new int[numberOfPrimes +1];
         candidate =1;
         primeIndex =1;
         primes[1] = 2;

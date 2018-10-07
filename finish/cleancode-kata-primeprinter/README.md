@@ -105,4 +105,10 @@ Activity
 - adjust the params in the call to NumberPrinter
 - remove unused fields in classes
 
+Activity
+
+- rename PrimePrinterHelper to PrimeGenerator
+- add numberOfPrimes param to generatePrime method
+- pass numberOfPrimes in calling logic
+
                
