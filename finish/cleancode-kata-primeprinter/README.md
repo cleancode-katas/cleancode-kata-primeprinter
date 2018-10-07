@@ -80,4 +80,16 @@ Activity
 - shift the numberOfPrimes field to PrimePrinter, make static
 - pull variable for PrimePrinterHelper
 - call method printNumbers by passing primes and numberOfPrimes 
+
+Activity
+
+- rename invoke to generatePrimes
+- extract printNumbers method into method object named NumberPrinter
+- Move the new inner class NumberPrinter to top level
+- do not pass outer class in new class constructor
+- ignore the missing variables warning and continue
+- add int before pagenumber and pageoffset
+- add int before rowoffset and column
+- pass int linesPerPage, int columns in constructor, make them fields
+- pass the values in the call to printNumbers
                

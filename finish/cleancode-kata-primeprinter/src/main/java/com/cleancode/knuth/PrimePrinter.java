@@ -6,7 +6,7 @@ public class PrimePrinter {
 
     public static void main(String[] args) {
         PrimePrinterHelper primePrinterHelper = new PrimePrinterHelper();
-        int primes[] = primePrinterHelper.invoke();
+        int primes[] = primePrinterHelper.generatePrimes();
         primePrinterHelper.printNumbers(primes, numberOfPrimes);
     }
 }
