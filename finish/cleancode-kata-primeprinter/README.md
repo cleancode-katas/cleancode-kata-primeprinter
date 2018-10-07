@@ -65,3 +65,9 @@ init in field declaration
 - MULT to multiples, introduce field, 
                init in field declaration
                
+Activity
+
+- Extract the number printing logic to method
+- name the method printPrimes
+- add parameters to pass primes and numberOfPrimes
+               
