@@ -3,14 +3,8 @@ package com.cleancode.knuth;
 public class PrimePrinterHelper {
 
     private final int numberOfPrimes = 1000;
-    private final int linesPerPage = 50;
-    private final int columns = 4;
     private final int ordmax = 30;
     private final int[] primes = new int[numberOfPrimes +1];
-    private int pagenumber;
-    private int pageoffset;
-    private int rowoffset;
-    private int column;
     private int candidate;
     private int primeIndex;
     private boolean possiblyPrime;
@@ -51,9 +45,4 @@ public class PrimePrinterHelper {
         }
         return primes;
     }
-
-    public void printNumbers(int numbers[], int numberOfNumbers) {
-        new NumberPrinter(linesPerPage, columns, numbers, numberOfNumbers).invoke();
-    }
-
 }

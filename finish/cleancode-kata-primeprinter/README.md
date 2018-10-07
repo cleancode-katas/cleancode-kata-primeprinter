@@ -92,4 +92,17 @@ Activity
 - add int before rowoffset and column
 - pass int linesPerPage, int columns in constructor, make them fields
 - pass the values in the call to printNumbers
+
+Activity
+
+- rename NumberPrinter.invoke to print
+- pass numbers and numberOfNumbers in print method
+- adjust the calling code by changing params
+- check tests pass
+- move the code in printNumbers method to main
+- new NumberPrinter(linesPerPage, columns).print(numbers, numberOfNumbers);
+- copy the linesPerPage and columns fields to PrimePrinter class
+- adjust the params in the call to NumberPrinter
+- remove unused fields in classes
+
                
