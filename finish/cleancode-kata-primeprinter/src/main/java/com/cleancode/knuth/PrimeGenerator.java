@@ -22,26 +22,30 @@ public class PrimeGenerator {
         square = 9;
 
         while (primeIndex < numberOfPrimes) {
-            do {
-                candidate += 2;
-                if( candidate == square) {
-                    ord++;
-                    square = primes[ord]* primes[ord];
-                    mult[ord -1]= candidate;
-                }
-                n =2;
-                possiblyPrime =true;
-                while (n < ord && possiblyPrime) {
-                    while (mult[n]< candidate)
-                        mult[n] += primes[n] + primes[n];
-                    if (mult[n] == candidate)
-                        possiblyPrime =false;
-                    n++;
-                }
-            } while (!possiblyPrime);
+            findNextPrime();
             primeIndex++;
             primes[primeIndex]= candidate;
         }
         return primes;
+    }
+
+    private void findNextPrime() {
+        do {
+            candidate += 2;
+            if( candidate == square) {
+                ord++;
+                square = primes[ord]* primes[ord];
+                mult[ord -1]= candidate;
+            }
+            n =2;
+            possiblyPrime =true;
+            while (n < ord && possiblyPrime) {
+                while (mult[n]< candidate)
+                    mult[n] += primes[n] + primes[n];
+                if (mult[n] == candidate)
+                    possiblyPrime =false;
+                n++;
+            }
+        } while (!possiblyPrime);
     }
 }

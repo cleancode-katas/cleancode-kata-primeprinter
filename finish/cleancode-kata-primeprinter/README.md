@@ -111,4 +111,13 @@ Activity
 - add numberOfPrimes param to generatePrime method
 - pass numberOfPrimes in calling logic
 
+Activity
+
+- In PrimeGenerator generatePrimes method
+- select the inner do-while loop code
+- extract method named findNextPrime
+- Extract local variable for NumberPrinter object
+- rearrange lines in main method
+- rename final variables to CAPS
+
                
