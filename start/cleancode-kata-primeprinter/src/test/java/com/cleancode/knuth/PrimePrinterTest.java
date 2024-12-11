@@ -1,31 +1,31 @@
 package com.cleancode.knuth;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrimePrinterTest {
     private PrintStream out;
 
-    @Before
-    public void setup() throws Exception {
+    @BeforeEach
+    void setup() throws Exception {
         out = System.out;
         System.setOut(new PrintStream(new FileOutputStream("lead.txt")));
     }
 
-    @After
-    public void teardown() {
+    @AfterEach
+    void teardown() {
     	System.out.close();
         System.setOut(out);
         new File("lead.txt").delete();
     }
 
     @Test
-    public void makeSureOutputMatchesGold() throws Exception {
+    void makeSureOutputMatchesGold() throws Exception {
         PrimePrinter.main(new String[0]);
         BufferedReader lead = null;
         BufferedReader gold = null;
