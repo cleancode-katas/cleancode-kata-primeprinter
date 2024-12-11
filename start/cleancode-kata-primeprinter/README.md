@@ -19,7 +19,7 @@ Observation
 - what you have is a class hidden in the code
 - may be more than one class
 
-Activity
+Activity 1
 
 - Convert the function code into class PrimePrinterHelper
 - refactoring Extract to Method Object
@@ -27,11 +27,11 @@ Activity
 - correct code in main to created object and call method
 - tests should pass
 
-Activity
+Activity 2
 
 - Move PrimePrinterHelper class to top level
 
-Activity
+Activity 3
 
 - M to numberOfPrimes - introduce field, 
 initialize into field declaration
@@ -65,13 +65,13 @@ init in field declaration
 - MULT to multiples, introduce field, 
                init in field declaration
                
-Activity
+Activity 4
 
 - Extract the number printing logic to method
 - name the method printPrimes
 - add parameters to pass primes and numberOfPrimes
 
-Activity
+Activity 5
 
 - rename parameter primes to numbers
 - rename param numberOfPrimes to numberOfNumbers
@@ -81,7 +81,7 @@ Activity
 - pull variable for PrimePrinterHelper
 - call method printNumbers by passing primes and numberOfPrimes 
 
-Activity
+Activity 6
 
 - rename invoke to generatePrimes
 - extract printNumbers method into method object named NumberPrinter
@@ -93,7 +93,7 @@ Activity
 - pass int linesPerPage, int columns in constructor, make them fields
 - pass the values in the call to printNumbers
 
-Activity
+Activity 7
 
 - rename NumberPrinter.invoke to print
 - pass numbers and numberOfNumbers in print method
@@ -105,13 +105,13 @@ Activity
 - adjust the params in the call to NumberPrinter
 - remove unused fields in classes
 
-Activity
+Activity 8
 
 - rename PrimePrinterHelper to PrimeGenerator
 - add numberOfPrimes param to generatePrime method
 - pass numberOfPrimes in calling logic
 
-Activity
+Activity 9
 
 - In PrimeGenerator generatePrimes method
 - select the inner do-while loop code
