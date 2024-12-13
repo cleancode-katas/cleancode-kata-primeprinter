@@ -17,7 +17,7 @@ function buildUrl(url, options) {
     }
   }
 
-  function appendPath(buildUrl, path) {
+  function appendPath(builtUrl, path) {
     if (path) {
       return builtUrl + "/" + path;
     }
