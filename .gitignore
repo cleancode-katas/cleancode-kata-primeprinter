@@ -1,4 +1,25 @@
-.idea/
+# .gitignore - list of file path patterns not to be tracked by source control
+
+# Local variables are specific to local system only
+.env
+.env.backup
+
+# IDE specific local configurations
+/.idea
+
+# adds .vscode folder to ignored files
+.vscode/**/*
+
+# exclude these files from being ignored
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# macOS folder configuration attributes
+*DS_Store
+
+# Generated files
 .classpath
 .project
 .settings/
