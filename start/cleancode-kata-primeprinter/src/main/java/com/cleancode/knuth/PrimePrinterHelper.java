@@ -1,7 +1,7 @@
 package com.cleancode.knuth;
 
 public class PrimePrinterHelper {
-    private final int numberOfPrimes;
+    private final int numberOfNumbers;
     private int[] primes;
     private final int ordmax = 30;
     private int primeIndex;
@@ -17,9 +17,9 @@ public class PrimePrinterHelper {
     private int column;
     private int linesPerPage;
 
-    public PrimePrinterHelper(int numberOfPrimes) {
-        this.numberOfPrimes = numberOfPrimes;
-        this.primes = new int[numberOfPrimes + 1];
+    public PrimePrinterHelper(int numberOfNumbers) {
+        this.numberOfNumbers = numberOfNumbers;
+        this.primes = new int[numberOfNumbers + 1];
         this.multiples = new int[ordmax + 1];
         generatePrimes();
     }
@@ -33,7 +33,7 @@ public class PrimePrinterHelper {
 
         primes[1] = 2;
 
-        while (primeIndex < numberOfPrimes) {
+        while (primeIndex < numberOfNumbers) {
             boolean JPRIME;
             do {
                 candidate += 2;
@@ -57,19 +57,23 @@ public class PrimePrinterHelper {
         }
     }
 
-    public void printPrimes(int[] primes, int numberOfPrimes) {
+    public int[] getPrimes() {
+        return primes;
+    }
+
+    public void printPrimes(int[] numbers, int numberOfNumbers) {
         int pagenumber = 1;
         int pageoffset = 1;
-        while (pageoffset <= numberOfPrimes) {
+        while (pageoffset <= numberOfNumbers) {
             System.out.print("The First ");
-            System.out.print(Integer.toString(numberOfPrimes));
+            System.out.print(Integer.toString(numberOfNumbers));
             System.out.print(" Prime Numbers === Page ");
             System.out.print(Integer.toString(pagenumber));
             System.out.println("\n");
             for (int rowoffset = pageoffset; rowoffset <= pageoffset + linesPerPage - 1; rowoffset++) {
                 for (int column = 0; column <= this.column - 1; column++) {
-                    if (rowoffset + column * linesPerPage <= numberOfPrimes) {
-                        System.out.printf("%10d", primes[rowoffset + column * linesPerPage]);
+                    if (rowoffset + column * linesPerPage <= numberOfNumbers) {
+                        System.out.printf("%10d", numbers[rowoffset + column * linesPerPage]);
                     }
                 }
                 System.out.println();
@@ -78,9 +82,5 @@ public class PrimePrinterHelper {
             pagenumber++;
             pageoffset += linesPerPage * this.column;
         }
-    }
-
-    public int[] getPrimes() {
-        return primes;
     }
 }
