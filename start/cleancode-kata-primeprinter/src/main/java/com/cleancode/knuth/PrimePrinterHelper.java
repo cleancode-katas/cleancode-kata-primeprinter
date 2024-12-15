@@ -57,6 +57,29 @@ public class PrimePrinterHelper {
         }
     }
 
+    public void printPrimes(int[] primes, int numberOfPrimes) {
+        int pagenumber = 1;
+        int pageoffset = 1;
+        while (pageoffset <= numberOfPrimes) {
+            System.out.print("The First ");
+            System.out.print(Integer.toString(numberOfPrimes));
+            System.out.print(" Prime Numbers === Page ");
+            System.out.print(Integer.toString(pagenumber));
+            System.out.println("\n");
+            for (int rowoffset = pageoffset; rowoffset <= pageoffset + linesPerPage - 1; rowoffset++) {
+                for (int column = 0; column <= this.column - 1; column++) {
+                    if (rowoffset + column * linesPerPage <= numberOfPrimes) {
+                        System.out.printf("%10d", primes[rowoffset + column * linesPerPage]);
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println("\f");
+            pagenumber++;
+            pageoffset += linesPerPage * this.column;
+        }
+    }
+
     public int[] getPrimes() {
         return primes;
     }
