@@ -1,10 +1,10 @@
 package com.cleancode.knuth;
 
-public class PrimePrinterHelper {
+public class PrimeGenerator {
     private final int M;
     private int[] primes;
 
-    public PrimePrinterHelper(int M) {
+    public PrimeGenerator(int M) {
         this.M = M;
         this.primes = new int[M + 1];
         generatePrimes();
