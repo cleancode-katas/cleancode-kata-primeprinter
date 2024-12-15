@@ -1,47 +1,59 @@
 package com.cleancode.knuth;
 
 public class PrimePrinterHelper {
-    private final int M;
+    private final int numberOfPrimes;
     private int[] primes;
+    private final int ordmax = 30;
+    private int primeIndex;
+    private int candidate;
+    private boolean possiblyPrime;
+    private int ord;
+    private int square;
+    private int n;
+    private int[] multiples;
+    private int pageNumber;
+    private int pageOffset;
+    private int rowOffset;
+    private int column;
+    private int linesPerPage;
 
-    public PrimePrinterHelper(int M) {
-        this.M = M;
-        this.primes = new int[M + 1];
+    public PrimePrinterHelper(int numberOfPrimes) {
+        this.numberOfPrimes = numberOfPrimes;
+        this.primes = new int[numberOfPrimes + 1];
+        this.multiples = new int[ordmax + 1];
         generatePrimes();
     }
 
     private void generatePrimes() {
-        final int ORDMAX = 30;
-        int K = 1;
-        int J = 1;
-        int ORD = 2;
-        int SQUARE = 9;
-        int N = 0;
-        int[] MULT = new int[ORDMAX + 1];
+        primeIndex = 1;
+        candidate = 1;
+        ord = 2;
+        square = 9;
+        n = 0;
 
         primes[1] = 2;
 
-        while (K < M) {
+        while (primeIndex < numberOfPrimes) {
             boolean JPRIME;
             do {
-                J += 2;
-                if (J == SQUARE) {
-                    ORD++;
-                    SQUARE = primes[ORD] * primes[ORD];
-                    MULT[ORD - 1] = J;
+                candidate += 2;
+                if (candidate == square) {
+                    ord++;
+                    square = primes[ord] * primes[ord];
+                    multiples[ord - 1] = candidate;
                 }
-                N = 2;
+                n = 2;
                 JPRIME = true;
-                while (N < ORD && JPRIME) {
-                    while (MULT[N] < J)
-                        MULT[N] += primes[N] + primes[N];
-                    if (MULT[N] == J)
+                while (n < ord && JPRIME) {
+                    while (multiples[n] < candidate)
+                        multiples[n] += primes[n] + primes[n];
+                    if (multiples[n] == candidate)
                         JPRIME = false;
-                    N++;
+                    n++;
                 }
             } while (!JPRIME);
-            K++;
-            primes[K] = J;
+            primeIndex++;
+            primes[primeIndex] = candidate;
         }
     }
 
