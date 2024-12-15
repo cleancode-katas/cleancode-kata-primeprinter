@@ -27,27 +27,31 @@ public class PrimeGenerator {
         primes[1] = 2;
 
         while (primeIndex < numberOfPrimes) {
-            boolean JPRIME;
-            do {
-                candidate += 2;
-                if (candidate == square) {
-                    ord++;
-                    square = primes[ord] * primes[ord];
-                    multiples[ord - 1] = candidate;
-                }
-                n = 2;
-                JPRIME = true;
-                while (n < ord && JPRIME) {
-                    while (multiples[n] < candidate)
-                        multiples[n] += primes[n] + primes[n];
-                    if (multiples[n] == candidate)
-                        JPRIME = false;
-                    n++;
-                }
-            } while (!JPRIME);
+            findNextPrime();
             primeIndex++;
             primes[primeIndex] = candidate;
         }
+    }
+
+    private void findNextPrime() {
+        boolean JPRIME;
+        do {
+            candidate += 2;
+            if (candidate == square) {
+                ord++;
+                square = primes[ord] * primes[ord];
+                multiples[ord - 1] = candidate;
+            }
+            n = 2;
+            JPRIME = true;
+            while (n < ord && JPRIME) {
+                while (multiples[n] < candidate)
+                    multiples[n] += primes[n] + primes[n];
+                if (multiples[n] == candidate)
+                    JPRIME = false;
+                n++;
+            }
+        } while (!JPRIME);
     }
 
     public int[] getPrimes() {
